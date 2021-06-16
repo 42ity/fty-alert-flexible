@@ -835,7 +835,7 @@ void flexible_alert_actor(zsock_t* pipe, void* args)
             zmsg_destroy(&msg);
         } else if (which == mlm_client_msgpipe(self->mlm)) {
             zmsg_t* msg = mlm_client_recv(self->mlm);
-            if (is_fty_proto(msg)) {
+            if (fty_proto_is(msg)) {
                 fty_proto_t* fmsg = fty_proto_decode(&msg);
                 if (fty_proto_id(fmsg) == FTY_PROTO_ASSET) {
                     const char* address = mlm_client_address(self->mlm);

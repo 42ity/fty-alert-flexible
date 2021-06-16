@@ -80,7 +80,7 @@ TEST_CASE("flexible alert test")
         fty::shm::write_metric("mydevice", "status.ups", "64", "", 5);
 
         zmsg_t* alert = mlm_client_recv(asset);
-        CHECK(is_fty_proto(alert));
+        CHECK(fty_proto_is(alert));
         fty_proto_t* ftymsg = fty_proto_decode(&alert);
         fty_proto_print(ftymsg);
         fty_proto_destroy(&ftymsg);
