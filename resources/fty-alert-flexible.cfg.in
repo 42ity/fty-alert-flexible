@@ -5,7 +5,7 @@ server
     rules = @AGENT_VAR_DIR@/rules
 #   metrics_pattern = .*@sensorgpio-.*|.*@sts-.*
     metrics_pattern = .*
-    assets_pattern = sensorgpio-.*|sts-.*|ups-.*|.*.connector-.*
+    assets_pattern = sensorgpio-.*|sts-.*|ups-.*|.*.connector-.*|dell.vxrail.esxi-.*|vmware.esxi-.*|nutanix.node-.*
 
 malamute
     endpoint = ipc://@/malamute     # Malamute endpoint
