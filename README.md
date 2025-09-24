@@ -88,6 +88,7 @@ Lua main function MUST return two values -- alert status (number -2 .. +2) and
 alert message. There are global variables set, that you can return.
 
 ## global variables
+
 ### return values
 
 * OK - no alert, values are in range
@@ -103,11 +104,12 @@ HIGH_CRITICAL.
 
 * NAME -- friendly name of currently evaluated asset
 * INAME -- internal name of the asset (id)
+*
 
-## nagios metrics/alerts
+## metrics/alerts
 
-Agent automatically creates alerts from metrics called `nagios.*`.
-See fty-agent-snmp for more information.
+Agent automatically creates alerts from metrics read from the Shared Memory (SHM)
+or published on the LICENSING_ANNOUNCEMENTS stream (expiration remaining days).
 
 ## Mailbox
 

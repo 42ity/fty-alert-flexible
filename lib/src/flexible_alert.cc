@@ -59,7 +59,7 @@ static void zlist_freefn(void* p)
     }
 }
 
-void proto_freefn(void* p)
+static void proto_freefn(void* p)
 {
     if (p) {
         fty_proto_t* proto = reinterpret_cast<fty_proto_t*>(p);
@@ -1353,9 +1353,9 @@ void fty_flexible_alert_actor(zsock_t* pipe, void* args)
                     }
                 }
                 zmsg_destroy(&reply);
-                zstr_free(&cmd);
-                zstr_free(&p1);
                 zstr_free(&p2);
+                zstr_free(&p1);
+                zstr_free(&cmd);
             }
             zmsg_destroy(&msg);
         }
